@@ -40,11 +40,15 @@ const RegisterView: React.FC<Props> = (props: React.PropsWithChildren<Props>) =>
             placeholder='Password'
             type='password'
           />
-          <button
-            className={classes['form__button']}
-            type='submit'>
-            Register
-          </button>
+
+          <div className="btnwrapper">
+            <button
+              className={classes['form__button']}
+              type='submit'>
+              Register
+            </button>  
+          </div>
+          
         </form>
       </div>
       <span className={classes['text']}>Already have an account? <a>Click Here</a></span>
