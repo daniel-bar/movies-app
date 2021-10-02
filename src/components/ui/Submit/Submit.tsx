@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PBSubmitView from './PBSubmit.view';
+import SubmitView from './Submit.view';
 
 interface Props {
   readonly placeholder: string;
@@ -9,10 +9,10 @@ interface Props {
 
 const PBSubmit: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   return (
-    <PBSubmitView
+    <SubmitView
       placeholder={props.placeholder}
       className={props.className}
-    >{props.children}</PBSubmitView>
+    >{props.children}</SubmitView>
   );
 };
 

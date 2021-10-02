@@ -57,12 +57,12 @@
   }
         
   &__button {
+    margin-left: auto;
     transition: all .3s ease;
-    position: absolute;
-    bottom: 205px;
+    padding: 15px;
+    width: 250px;
     font-size: 2.3rem;
     font-weight: 600;
-    padding: 15px;
     color: map-get($colors, grey);
     background-color: map-get($colors, yellow);
     border-radius: 40px;
@@ -83,10 +83,11 @@
     font-size: 2rem;
     margin-top: 10px;
   }
-  
 }
 
 .text {
+  display: inline;
   font-size: 2rem;
-  color: #fff;
+  font-weight: 600;
+  color: map-get($colors, secondary);
 }

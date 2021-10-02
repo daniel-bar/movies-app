@@ -46,8 +46,8 @@ const RegisterView: React.FC<Props> = (props: React.PropsWithChildren<Props>) =>
             Register
           </button>
         </form>
-        <span className={classes['text']}>Already have an account? <a>Click Here</a></span>
       </div>
+      <span className={classes['text']}>Already have an account? <a>Click Here</a></span>
     </main>
   );
 };
