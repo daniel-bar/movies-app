@@ -1,0 +1,28 @@
+.container {
+  position: relative;
+  border-bottom: 1px solid #68676C;
+  padding-bottom: 8px;
+
+  &__placeholder {
+    pointer-events: none;
+    transition: all .3s ease;
+    position: absolute;
+    bottom: 8px;
+    color: #68676C;
+    font-size: 1.8rem;
+    font-weight: 400;
+
+    &--raised {
+      bottom: 35px;
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    color: #68676C;
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+}

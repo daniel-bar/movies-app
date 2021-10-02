@@ -1,0 +1,10 @@
+@import '../../../styles/variables.scss';
+
+.button {
+  background-color: map-get($colors, primary);
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 10px 0;
+}

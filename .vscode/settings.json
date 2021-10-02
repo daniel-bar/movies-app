@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+      "*.tsx": "typescriptreact"
+    },
+    "explorer.compactFolders": false,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/build": true
+    }
+  }
