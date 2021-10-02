@@ -58,7 +58,8 @@
         
   &__button {
     transition: all .3s ease;
-    position: absolute;
+    width: 200px;
+    align-content: flex-end;
     bottom: 205px;
     font-size: 2.3rem;
     font-weight: 600;
@@ -89,4 +90,9 @@
 .text {
   font-size: 2rem;
   color: #fff;
+}
+
+.btnwrapper{
+  display: flex;
+  align-items: flex-end;
 }
