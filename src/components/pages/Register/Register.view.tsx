@@ -1,4 +1,5 @@
 import React from 'react';
+import Input from '../../ui/Input/Input';
 import RegisterSvg from '../../ui/RegisterSvg/RegisterSvg';
 
 import classes from './Register.module.scss';
@@ -23,14 +24,29 @@ const RegisterView: React.FC<Props> = (props: React.PropsWithChildren<Props>) =>
       <div className={classes['formContainer']}>
         <form className={classes['form']} onSubmit={props.submitHandler}>
           <h1 className={classes['form__header']}>Join our website</h1>
-          <input
+          {/* <input
             className={classes['form__input']}
             placeholder='Username'
             // value={'props.username'}
             type='text'
             // changeHandler={props.usernameChangeHandler}
+          /> */}
+          <Input
+            placeholder='Username'
+            value={props.username}
+            changeHandler={props.usernameChangeHandler}
           />
-          <input
+          <Input
+            placeholder='Email'
+            value={props.email}
+            changeHandler={props.emailChangeHandler}
+          />
+          <Input
+            placeholder='Password'
+            value={props.password}
+            changeHandler={props.passwordChangeHandler}
+          />
+          {/* <input
             className={classes['form__input']}
             placeholder='Email'
             type='email'
@@ -39,7 +55,7 @@ const RegisterView: React.FC<Props> = (props: React.PropsWithChildren<Props>) =>
             className={classes['form__input']}
             placeholder='Password'
             type='password'
-          />
+          /> */}
 
           <div className="btnwrapper">
             <button

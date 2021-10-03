@@ -14,13 +14,12 @@ interface Props {
 
 const InputView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   const containerClasses = `${classes['container']}${props.className ? ` ${props.className}` : ''}`;
-  const placeholderClasses = `${classes['container__placeholder']}${props.raisePlaceholder ? ` ${classes['container__placeholder--raised']}` : ''}`;
 
   return (
     <div className={containerClasses}>
-      <span className={placeholderClasses}>{props.placeholder}</span>
       <input
         className={classes['container__input']}
+        placeholder={props.placeholder}
         value={props.value}
         onChange={({ currentTarget: { value }}) => props.changeHandler(value)}
         onFocus={() => props.raisePlaceholderHandler(true)}
@@ -31,7 +30,7 @@ const InputView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   );
 };
 
-InputView.displayName = 'InputView';
+InputView.displayName = 'Input';
 InputView.defaultProps = {};
 
 export default InputView;
