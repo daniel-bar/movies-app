@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RegisterSvg = () => {
+const AuthSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +143,7 @@ const RegisterSvg = () => {
   );
 };
 
-RegisterSvg.displayName = 'RegisterSvg';
-RegisterSvg.defaultProps = {};
+AuthSvg.displayName = 'AuthSvg';
+AuthSvg.defaultProps = {};
 
-export default React.memo(RegisterSvg);
+export default React.memo(AuthSvg);

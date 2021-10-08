@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from '../../ui/Input/Input';
-import RegisterSvg from '../../ui/RegisterSvg/RegisterSvg';
+import AuthSvg from '../../ui/svg/AuthSvg/AuthSvg';
 
 import classes from './Register.module.scss';
 
@@ -19,7 +19,7 @@ const RegisterView: React.FC<Props> = (props: React.PropsWithChildren<Props>) =>
   return (
     <main className={classes['container']}>
       <div className={classes['svgContainer']}>
-        <RegisterSvg />
+        <AuthSvg />
       </div>
       <div className={classes['formContainer']}>
         <form className={classes['form']} onSubmit={props.submitHandler}>
