@@ -1,0 +1,87 @@
+@import "../../../styles/variables.scss";
+
+.nav {
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  height: 70px;
+  background-color: map-get($colors, dark);
+  padding: 0 10px 0 10px;
+}
+
+.innerNav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  max-width: map-get($sizes, web-width);
+  margin: 0 auto;
+
+  .navLink {
+    transition: all .3s ease;
+    color: #FFF;
+    font-size: 4rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 20px;
+
+    &--gender {
+      padding: 23px 20px;
+      font-size: 2rem;
+    }
+      
+    &:hover {
+      background-color: map-get($colors, dark-hover);
+    }
+  }
+
+  &__divider {
+    width: 1px;
+    height: 100%;
+    background-color: map-get($colors, divider);
+
+    &--withMargin {
+      margin: 0 25px;
+    }
+  }
+   
+  &__searchInput {
+    transition: all .3s ease;
+    width: 100%;
+    min-width: 200px;
+    border: 2px solid transparent;
+    margin: 0 40px;
+    font-size: 1.6rem;
+    border-radius: 20px;
+    padding: 8px 16px;
+
+    &:focus {
+      border-color: map-get($colors, dark-hover);
+    }
+  }
+
+  .icon {
+    cursor: pointer;
+    transition: all .3s ease;
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    fill: map-get($colors, icon-fill);
+    outline: none;
+
+    &:hover {
+      fill: map-get($colors, icon-fill-hover);
+    }
+  }
+
+  .innerNavIconContainer {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &:hover .iconDropDown {
+      display: flex;
+    }
+  }
+}
