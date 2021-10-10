@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from '../../ui/Input/Input';
+import Nav from '../../ui/Nav/Nav';
 import AuthSvg from '../../ui/svg/AuthSvg/AuthSvg';
 
 import classes from './Register.module.scss';
@@ -49,7 +50,7 @@ const RegisterView: React.FC<Props> = (props: React.PropsWithChildren<Props>) =>
           
         </form>
       </div>
-      <span className={classes['text']}>Already have an account? <a>Click Here</a></span>
+      {/* <span className={classes['text']}>Already have an account? <a>Click Here</a></span> */}
     </div>
   );
 };

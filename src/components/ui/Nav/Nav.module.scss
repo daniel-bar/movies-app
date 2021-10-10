@@ -1,18 +1,19 @@
 @import "../../../styles/variables.scss";
 
 .nav {
-  z-index: 1;
+  z-index: 100;
   position: sticky;
   top: 0;
-  height: 70px;
-  background-color: map-get($colors, dark);
-  padding: 0 10px 0 10px;
+  height: 60px;
+  background-color: map-get($colors, secondary);
+  padding: 20px 20px;
 }
 
 .innerNav {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   max-width: map-get($sizes, web-width);
   margin: 0 auto;
 
@@ -20,68 +21,24 @@
     transition: all .3s ease;
     color: #FFF;
     font-size: 4rem;
-    font-weight: 500;
+    font-weight: 700;
     text-decoration: none;
     padding: 10px 20px;
-
-    &--gender {
-      padding: 23px 20px;
-      font-size: 2rem;
-    }
       
     &:hover {
-      background-color: map-get($colors, dark-hover);
+      color: map-get($colors, primary);
     }
   }
-
-  &__divider {
-    width: 1px;
-    height: 100%;
-    background-color: map-get($colors, divider);
-
-    &--withMargin {
-      margin: 0 25px;
-    }
-  }
-   
-  &__searchInput {
+  .navLinkButton {
     transition: all .3s ease;
-    width: 100%;
-    min-width: 200px;
-    border: 2px solid transparent;
-    margin: 0 40px;
-    font-size: 1.6rem;
-    border-radius: 20px;
-    padding: 8px 16px;
-
-    &:focus {
-      border-color: map-get($colors, dark-hover);
-    }
-  }
-
-  .icon {
-    cursor: pointer;
-    transition: all .3s ease;
-    min-width: 30px;
-    min-height: 30px;
-    max-width: 30px;
-    max-height: 30px;
-    fill: map-get($colors, icon-fill);
-    outline: none;
+    color: map-get($colors, primary);
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding: 10px 30px;
+    border-radius: 140px;
 
     &:hover {
-      fill: map-get($colors, icon-fill-hover);
-    }
-  }
-
-  .innerNavIconContainer {
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-
-    &:hover .iconDropDown {
-      display: flex;
+      background-color: map-get($colors, grey);
     }
   }
 }

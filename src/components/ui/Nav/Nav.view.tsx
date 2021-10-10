@@ -1,36 +1,20 @@
 import React from 'react';
 
-import classes from './Input.module.scss';
+import classes from './Nav.module.scss';
 
-interface Props {
-  readonly placeholder: string;
-  readonly value: string;
-  readonly changeHandler: (value: string) => void;
-  readonly raisePlaceholder: boolean;
-  readonly raisePlaceholderHandler: (raised: boolean) => void;
-  readonly type?: 'email' | 'text';
-  readonly className?: string;
-}
-
-const InputView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
-  const containerClasses = `${classes['container']}${props.className ? ` ${props.className}` : ''}`;
+const NavView = () => {
 
   return (
-    <div className={containerClasses}>
-      <input
-        className={classes['container__input']}
-        placeholder={props.placeholder}
-        value={props.value}
-        onChange={({ currentTarget: { value }}) => props.changeHandler(value)}
-        onFocus={() => props.raisePlaceholderHandler(true)}
-        onBlur={() => props.raisePlaceholderHandler(props.value !== '')}
-        type={props.type ?? 'text'}
-      />
-    </div>
+    <nav className={classes['nav']}>
+      <div className={classes['innerNav']}>
+        <a className={classes['navLink']}>Movies App</a>
+        <button className={classes['navLinkButton']}>User</button>
+      </div>
+    </nav>
   );
 };
 
-InputView.displayName = 'Input';
-InputView.defaultProps = {};
+NavView.displayName = 'Nav';
+NavView.defaultProps = {};
 
-export default InputView;
+export default NavView;
