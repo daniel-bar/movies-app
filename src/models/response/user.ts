@@ -16,15 +16,7 @@ export interface IRegisterResponse extends IServerResponseData {
   readonly data?: Readonly<{ token: string }>;
 }
 
-export interface ILoginPasswordResponse extends IServerResponseData {
-  readonly data?: Readonly<{
-    token: string;
-    username: string;
-    email: string;
-  }>;
-}
-
-export interface ILoginOTPResponse extends IServerResponseData {
+export interface ILoginResponse extends IServerResponseData {
   readonly data?: Readonly<{
     token: string;
     username: string;

@@ -1,15 +1,16 @@
 import React from 'react';
-import './App.css';
-import Register from './components/pages/Register/Register';
-import Nav from './components/ui/Nav/Nav';
 
-function App() {
+import AppView from './App.view';
+
+interface Props { }
+
+const App: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   return (
-    <>
-    <Nav />
-    <Register />
-    </>
+    <AppView></AppView>
   );
-}
+};
 
-export default App;
+App.displayName = 'App';
+App.defaultProps = {};
+
+export default React.memo(App);

@@ -1,12 +1,10 @@
 import React from 'react';
-import Background from '../../ui/Background/Background';
 import Input from '../../ui/Input/Input';
-import Nav from '../../ui/Nav/Nav';
 import MSvg from '../../ui/MSvg/MSvg';
 
-import icons from '../../../../src/assets/icons';
+import icons from '../../../assets/icons';
 
-import classes from './Register.module.scss';
+import classes from './Login.module.scss';
 
 interface Props {
   readonly iconName: keyof typeof icons;
@@ -19,7 +17,7 @@ interface Props {
   readonly submitHandler: (e: React.FormEvent) => void;
 }
 
-const RegisterView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
+const LoginView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   return (
     <div className={classes['outerContainer']}>
       <div className={classes['innerContainer']}>
@@ -29,12 +27,7 @@ const RegisterView: React.FC<Props> = (props: React.PropsWithChildren<Props>) =>
         />
         <div className={classes['formContainer']}>
           <form className={classes['form']} onSubmit={props.submitHandler}>
-            <h1 className={classes['form__header']}>Join our website</h1>
-            <Input
-              placeholder='Username'
-              value={props.username}
-              changeHandler={props.usernameChangeHandler}
-            />
+            <h1 className={classes['form__header']}>Welcome Back!</h1>
             <Input
               placeholder='Email'
               value={props.email}
@@ -48,19 +41,19 @@ const RegisterView: React.FC<Props> = (props: React.PropsWithChildren<Props>) =>
             <button
               className={classes['form__button']}
               type='submit'>
-              Register
+              Login
             </button>  
           </form>
         </div>
       </div>
       <div className={classes['spanContainer']}>
-        <span className={classes['text']}>Already have an account? <a href='/login'>Click Here</a></span>
+        <span className={classes['text']}>Don't have an account? <a href='/register'>Click Here</a></span>
       </div>
     </div>
   );
 };
 
-RegisterView.displayName = 'RegisterView';
-RegisterView.defaultProps = {};
+LoginView.displayName = 'LoginView';
+LoginView.defaultProps = {};
 
-export default RegisterView;
+export default LoginView;

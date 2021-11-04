@@ -1,0 +1,26 @@
+@import "../../../styles/variables.scss";
+
+.mainContainer {  
+  display: flex;
+  flex-direction: row;
+  min-height: 80vh;
+  min-width: 140vh;
+  align-items: center;
+  justify-content: center;
+  background-color: map-get($colors, primary);
+  padding: 100px;
+  position: relative;
+  z-index: 10;
+  
+  &:after {
+    background-color: #fff;
+    border-radius: 15px;
+    content: '';
+    position: absolute;
+    top: 90px;
+    left: 170px;
+    right: 170px;
+    bottom: 90px;
+    z-index: -1;
+  }
+}

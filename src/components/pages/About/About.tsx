@@ -7,11 +7,11 @@ import * as authActions from '../../../store/actions/auth';
 import { backendAPIAxios } from '../../../utils/http';
 import { IUser } from '../../../models/user';
 
-import { IRegisterResponse } from '../../../models/response/user';
+import { ILoginResponse } from '../../../models/response/user';
 
-import icons from '../../../../src/assets/icons';
+import icons from '../../../assets/icons';
 
-import RegisterView from './Register.view';
+import AboutView from './About.view';
 
 interface PropsFromDispatch {
   login: (user: IUser) => authActions.Login;
@@ -21,7 +21,7 @@ interface Props extends PropsFromDispatch {
   readonly iconName: keyof typeof icons;
 }
 
-const Register: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
+const About: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   const [ emailState, setEmailState ] = useState<string>('');
   const [ usernameState, setUsernameState ] = useState<string>('');
   const [ passwordState, setPasswordState ] = useState<string>('');
@@ -32,25 +32,8 @@ const Register: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
 
   const passwordChangeHandler = (value: string) => setPasswordState(() => value);
 
-  const submitHandler = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const registrationData = {
-      username: usernameState,
-      email: emailState,
-    };
-
-    backendAPIAxios.post('/register', {
-      ...registrationData,
-      password: passwordState,
-    }).then((response: AxiosResponse<IRegisterResponse>) => {
-      sessionStorage.setItem('token', response.data.data!.token);
-      props.login(registrationData);
-    });
-  };
-
   return (
-    <RegisterView
+    <AboutView
       iconName={props.iconName}
       email={emailState}
       username={usernameState}
@@ -58,13 +41,12 @@ const Register: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
       usernameChangeHandler={usernameChangeHandler}
       emailChangeHandler={emailChangeHandler}
       passwordChangeHandler={passwordChangeHandler}
-      submitHandler={submitHandler}
-    >{props.children}</RegisterView>
+    >{props.children}</AboutView>
   );
 };
 
-Register.displayName = 'Register';
-Register.defaultProps = {};
+About.displayName = 'About';
+About.defaultProps = {};
 
 const mapDispatchToProps = (dispatch: Dispatch<authActions.AuthTypes>): PropsFromDispatch => {
   return {
@@ -72,4 +54,4 @@ const mapDispatchToProps = (dispatch: Dispatch<authActions.AuthTypes>): PropsFro
   };
 };
 
-export default connect(null, mapDispatchToProps)(Register);
+export default connect(null, mapDispatchToProps)(About);

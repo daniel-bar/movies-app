@@ -1,0 +1,50 @@
+@import "../../../styles/variables.scss";
+
+.outerContainer {
+  display:flex;
+}
+
+.svgContainer {
+  width: 60vh;
+  height: 60vh;
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to top, map-get($colors, secondary) 35%, map-get($colors, primary) 0%);
+  padding: 5px 20px;
+  margin-left: 115px;
+  border-radius: 20px;
+  min-width: 700px;
+  max-width: 700px;
+
+  &__header {
+    font-size: 4rem;
+    color: #fff;
+  }
+  
+  &__text {
+    font-size: 1.4rem;
+    color: #fff;
+  }
+        
+  &__button {
+    transition: all .3s ease;
+    padding: 35px;
+    margin-top: 40px;
+    width: 400px;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: map-get($colors, yellow);
+    border-radius: 50px;
+    
+    &:hover {
+      color: #000;
+      background-color: #fff;
+    }
+  }
+}
+
