@@ -1,0 +1,65 @@
+@import '../../../styles/variables.scss';
+
+.container {
+  cursor: pointer;
+  transition: all .3s ease;
+  position: relative;
+  width: 175px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: map-get($colors, primary);
+  border: 4px solid  map-get($colors, secondary);
+  box-shadow: 0 1px 4px map-get($colors, primary);
+  border-radius: 6px;
+
+  &--active {
+    box-shadow: 0 3px 4px map-get($colors, primary);
+  }
+
+  &:hover {
+    box-shadow: 0 3px 4px map-get($colors, primary);
+  }
+  
+  &__placeholder {
+    font-size: 1.5rem;
+    font-weight: map-get($fontWeight, regular);
+    color: map-get($colors, placeholder);
+    white-space: nowrap;
+  }
+
+  &__icon {
+    height: 8px;
+    width: auto;
+  }
+
+  .optionsContainer {
+    z-index: 1;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    padding: 3px 6px;
+    display: flex;
+    flex-direction: column;
+    background-color: map-get($colors, secondary);
+    border: 1px solid map-get($colors, primary-divider);
+    border-radius: 6px;
+    box-shadow: 0 4px 10px #35393e45;
+
+    &__option {
+      transition: all .3s ease;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 1.4rem;
+      font-weight: map-get($fontWeight, semi-bold);
+      color: map-get($colors, primary-text);
+
+      &:hover {
+        color: map-get($colors, yellow);
+        background-color: #f6f8fc;
+      }
+    }
+  }
+}

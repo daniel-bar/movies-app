@@ -1,7 +1,4 @@
-interface IServerResponseData {
-  readonly success: boolean;
-  readonly message: string;
-}
+import IServerResponseData from '../shared/response';
 
 export interface IAutoLoginResponseData extends IServerResponseData {
   readonly data?: Readonly<{

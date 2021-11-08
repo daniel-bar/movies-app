@@ -1,0 +1,57 @@
+@import "../../../styles/variables.scss";
+
+.innerContainer {
+  display:flex;
+}
+
+.svgContainer {
+  width: 60vh;
+  height: 60vh;
+}
+
+.formContainer {
+  background: linear-gradient(to top, map-get($colors, primary) 54%, map-get($colors, secondary) 0%);
+  padding: 50px;
+  margin-left: 115px;
+  border-radius: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    font-size: 4rem;
+    color: #fff;
+    margin-left: 80px;
+  }
+
+  &__select {
+    min-width: 92.3%;
+    padding: 15px;
+  }
+
+  &__button {
+    transition: all .3s ease;
+    margin-left: auto;
+    padding: 15px;
+    width: 350px;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: map-get($colors, yellow);
+    border-radius: 40px;
+    
+    &:hover {
+      color: #000;
+      background-color: #fff;
+    }
+  }
+}
+
+.spanContainer {
+  display: flex;
+  justify-content: end;
+  margin-right: 50px;
+  margin-top: 20px;
+}

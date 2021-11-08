@@ -1,0 +1,58 @@
+@import "../../../styles/variables.scss";
+
+.outerContainer {
+  display:flex;
+  flex-direction: row;
+}
+
+.upperContainer {
+  display: flex;
+  flex-direction: column;
+  
+  &__header {
+    font-size: 3rem;
+  }
+
+  &__description {
+    margin-top: 20px;
+    font-size: 1.4rem;
+  }
+}
+
+.lowerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #E1E8EB;
+  padding: 5px 20px;
+  margin-left: 115px;
+  border-radius: 20px;
+  min-width: 700px;
+
+  &__header {
+    font-size: 4rem;
+    color: #fff;
+  }
+        
+  &__button {
+    transition: all .3s ease;
+    padding: 35px;
+    margin-top: 40px;
+    width: 400px;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: map-get($colors, yellow);
+    border-radius: 50px;
+    
+    &:hover {
+      color: #000;
+      background-color: #fff;
+    }
+  }
+}
+
+.svgContainer {
+  width: 60vh;
+  height: 60vh;
+}

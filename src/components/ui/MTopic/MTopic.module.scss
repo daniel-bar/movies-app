@@ -1,0 +1,35 @@
+@import '../../../styles/variables.scss';
+
+.container {
+  transition: all .3s ease;
+  display: flex;
+  width: 550px;
+  border: 1px solid #eceef5;
+  border-radius: 8px;
+  background-color: #fff;
+
+  &:hover {
+    border-color: map-get($colors, active-border);
+  }
+
+  &__select {
+    width: 140px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: unset;
+    border-left: 1px solid #eceef5;
+  }
+
+  &__input {
+    flex: 1;
+    padding: 6px 20px;
+  }
+
+  &__icon {
+    align-self: center;
+    height: 15px;
+    width: auto;
+    margin: 0 20px;
+    fill: #7c7c7c;
+  }
+}
