@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
+
 import Input from '../../ui/Input/Input';
 import MSvg from '../../ui/MSvg/MSvg';
 
@@ -47,7 +49,11 @@ const LoginView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
         </div>
       </div>
       <div className={classes['spanContainer']}>
-        <span className={classes['text']}>Don't have an account? <a href='/register'>Click Here</a></span>
+        <span 
+          className={classes['text']}>
+          Don't have an account? 
+          <Link to={'/register'}>Click Here</Link>
+        </span>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
-import Input from '../../ui/Input/Input';
+import { Link } from 'react-router-dom';
+
 import MSvg from '../../ui/MSvg/MSvg';
 
 import icons from '../../../assets/icons';
@@ -27,11 +28,13 @@ const WelcomeView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => 
           <div className={classes['upperContainer__description']}>cwencwejcnwekjcnwevkmwelvkwemclkwen</div>
         </div>
         <div className={classes['lowerContainer']}>
+          <Link to={'/movies'}>
             <button
               className={classes['lowerContainer__button']}
               type='button'>
               Go to movies!
             </button>
+          </Link>
             <MSvg
               name='welcome'
               className={classes['svgContainer']} 

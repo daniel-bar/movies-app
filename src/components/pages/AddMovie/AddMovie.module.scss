@@ -5,6 +5,7 @@
 }
 
 .svgContainer {
+  align-self: center;
   width: 60vh;
   height: 60vh;
 }
@@ -29,6 +30,14 @@
   &__select {
     min-width: 92.3%;
     padding: 15px;
+  }
+
+  &__file {
+    align-self: center;
+    min-width: 92.3%;
+    border: 3px solid red;
+    // display: none;
+    // padding: 10px;
   }
 
   &__button {

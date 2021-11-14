@@ -25,7 +25,8 @@ interface Props extends PropsFromDispatch {
 const AddMovie: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
   const sessionData = sessionStorage.getItem('AddMovie');
 
-  const [ messageState, setMessageState ] = useState<string>('');
+  const [ titleState, setTitleState ] = useState<string>('');
+  const [ descriptionState, setDescriptionState ] = useState<string>('');
   
   const categoryFilter = useMemo(() => {
     if (sessionData) {
@@ -43,7 +44,7 @@ const AddMovie: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
     category: Category;
   }>({ category: categoryFilter ?? Category.Other });
 
-    const onCategorySelect = (category: Category) => {
+  const onCategorySelect = (category: Category) => {
     const sessionDataObject: Readonly<{
       category?: Category;
     }> = JSON.parse(sessionData ?? '{}');
@@ -63,7 +64,8 @@ const AddMovie: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
     });
   }
 
-  const messageChangeHandler = (value: string) => setMessageState(() => value);
+  const titleChangeHandler = (value: string) => setTitleState(() => value);
+  const descriptionChangeHandler = (value: string) => setDescriptionState(() => value);
 
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
@@ -82,16 +84,31 @@ const AddMovie: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
     });
   };
 
-  console.log()
+  // const [formState, inputHandler, setFormData] = useForm(
+  //   {
+  //     title: {
+  //       value: '',
+  //       isValid: false
+  //     },
+  //     description: {
+  //       value: '',
+  //       isValid: false
+  //     },
+  //   },
+  //   false
+  // );
 
   return (
     <AddMovieView
       iconName={props.iconName}
-      message={messageState}
-      messageChangeHandler={messageChangeHandler}
-      submitHandler={submitHandler}
+      title={titleState}
+      titleChangeHandler={titleChangeHandler}
+      description={descriptionState}
+      descriptionChangeHandler={descriptionChangeHandler}
       onCategorySelect={onCategorySelect}
       categoryFilter={categoryFilter}
+      submitHandler={submitHandler}
+      // inputHandler={inputHandler}
     >{props.children}</AddMovieView>
   );
 };

@@ -1,8 +1,10 @@
 import React from 'react';
+import Select from 'react-select';
 import Input from '../../ui/Input/Input';
 import MSvg from '../../ui/MSvg/MSvg';
 
 import MSelect from '../../ui/MSelect/MSelect';
+import ImageUpload from '../../ui/ImageUpload/ImageUpload';
 
 import { Category } from '../../../models/shared/enumerations';
 
@@ -12,11 +14,13 @@ import classes from './AddMovie.module.scss';
 
 interface Props {
   readonly iconName: keyof typeof icons;
-  readonly message: string;
-  readonly messageChangeHandler: (value: string) => void;
+  readonly title: string;
+  readonly titleChangeHandler: (value: string) => void;
+  readonly description: string;
+  readonly descriptionChangeHandler: (value: string) => void;
+  readonly onCategorySelect: (category: Category) => void;
+  readonly categoryFilter: Category | null;
   readonly submitHandler: (e: React.FormEvent) => void;
-  onCategorySelect: (category: Category) => void;
-  categoryFilter: Category | null;
 }
 
 const ContactView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
@@ -87,10 +91,10 @@ const ContactView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => 
             <div className={classes['upperContainer']}>
               <div className={classes['upperContainer__1']}>
                 <Input
-                  className={classes['form__title']}
-                  placeholder='title'
-                  value={props.message}
-                  changeHandler={props.messageChangeHandler}
+                  type='text'
+                  placeholder='Title'
+                  value={props.title}
+                  changeHandler={props.titleChangeHandler}
                 />
                 <MSelect
                   className={classes['form__select']}
@@ -99,17 +103,19 @@ const ContactView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => 
                   withActiveBorder
                   selectOptionHandler={props.onCategorySelect}
                 />
+                <Input
+                  type='text'
+                  placeholder='Description'
+                  value={props.description}
+                  changeHandler={props.descriptionChangeHandler}
+                />
+                <ImageUpload
+                  id='image'
+                />
               </div>
               <div className={classes['upperContainer__2']}>
-                
               </div>
             </div>
-            <Input
-              className={classes['form__input']}
-              placeholder='message'
-              value={props.message}
-              changeHandler={props.messageChangeHandler}
-            />
             <button
               className={classes['form__button']}
               type='submit'>

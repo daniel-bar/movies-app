@@ -5,7 +5,7 @@ export enum Topic {
     ReturnsAndRefunds,
     Technical,
 };
-
+    
 export enum Category {
     Other = 1,
     Action,

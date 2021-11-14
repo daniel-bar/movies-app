@@ -15,7 +15,7 @@ const MSelect = <Placeholder extends string, OptionValue extends number | 'all',
   const [ placeholderState, setPlaceholderState ] = useState<Placeholder | OptionLabel>(props.placeholder);
   const [ optionsState, setOptionsState ] = useState<{ value: OptionValue, label: OptionLabel }[]>([]);
 
-  const selectRef = useRef<HTMLDivElement>(null);
+  const selectRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const clickHandler = (event: MouseEvent) => {

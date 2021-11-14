@@ -1,7 +1,7 @@
 import React from 'react';
-import Background from '../../ui/Background/Background';
+import { Link } from 'react-router-dom';
+
 import Input from '../../ui/Input/Input';
-import Nav from '../../ui/Nav/Nav';
 import MSvg from '../../ui/MSvg/MSvg';
 
 import icons from '../../../../src/assets/icons';
@@ -54,7 +54,10 @@ const RegisterView: React.FC<Props> = (props: React.PropsWithChildren<Props>) =>
         </div>
       </div>
       <div className={classes['spanContainer']}>
-        <span className={classes['text']}>Already have an account? <a href='/login'>Click Here</a></span>
+        <span 
+          className={classes['text']}>
+          Already have an account? 
+          <Link to={'/login'}>Click Here</Link></span>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
-import Input from '../../ui/Input/Input';
+import { Link } from 'react-router-dom';
+
 import MSvg from '../../ui/MSvg/MSvg';
 
 import icons from '../../../assets/icons';
@@ -34,11 +35,13 @@ const AboutView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
-            <button
-              className={classes['innerContainer__button']}
-              type='button'>
-              Go to movies!
-            </button>
+            <Link to={'/movies'}>
+              <button
+                className={classes['innerContainer__button']}
+                type='button'>
+                Go to movies!
+              </button>
+            </Link>
         </div>
       </div>
   );

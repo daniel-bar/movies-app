@@ -18,10 +18,10 @@ const AppView: React.FC<Props> = (props: React.PropsWithChildren<Props>) => (
       <Nav />
       <Background>
         <Switch>
+          <Route exact path="/" component={Welcome}/>
           <Route path="/register" component={Register}/>
           <Route path="/login" component={Login}/>
           <Route path="/about" component={About}/>
-          <Route path="/welcome" component={Welcome}/>
           <Route path="/add-movie" component={AddMovie}/>
           <Route path="/contact" component={Contact}/>
         </Switch>

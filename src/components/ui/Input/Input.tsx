@@ -6,7 +6,8 @@ interface Props {
   readonly placeholder: string;
   readonly value: string;
   readonly changeHandler: (value: string) => void;
-  readonly type?: 'email' | 'text';
+  readonly type?: 'email' | 'text' | 'file';
+  readonly style?: string;
   readonly className?: string;
 }
 
